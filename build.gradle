@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+
+    apply plugin:'base'
+    apply plugin: "idea"
+    allprojects {
+        group = 'com.bolly'
+        version = version
+        repositories {
+            maven {
+                url "http://maven.aliyun.com/nexus/content/groups/public/"
+            }
+            jcenter()
+        }
+        ext {
+            commonsLangVersion = '3.4'
+            guavaVersion='19.0'
+            tomcatVersion = '8.5.14'
+            springBootVersion = '2.0.0.RELEASE'
+        }
+    }
+
+    subprojects {
+        apply plugin: 'java'
+
+        sourceSets.main.resources.srcDirs += "src/main/java"
+        sourceSets.test.resources.srcDirs += "src/test/java"
+        compileJava {
+            sourceCompatibility = 1.8
+            targetCompatibility = 1.8
+            options.encoding = 'UTF-8'
+        }
+        compileTestJava {
+            sourceCompatibility = 1.8
+            targetCompatibility = 1.8
+            options.encoding = 'UTF-8'
+        }
+    }
+}

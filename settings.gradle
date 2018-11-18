@@ -1,0 +1,5 @@
+rootProject.name = 'java_wheels'
+include 'jdk'
+include 'design'
+include 'spring'
+include 'tomcat'
