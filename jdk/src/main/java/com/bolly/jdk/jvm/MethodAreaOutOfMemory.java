@@ -1,4 +1,4 @@
-package com.bolly.jvm;
+package com.bolly.jdk.jvm;
 
 import java.lang.reflect.Method;
 //import net.sf.cglib.proxy.Enhancer;

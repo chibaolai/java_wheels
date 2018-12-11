@@ -1,4 +1,4 @@
-package com.bolly.jvm;
+package com.bolly.jdk.jvm;
 
 import java.util.ArrayList;
 import java.util.List;
