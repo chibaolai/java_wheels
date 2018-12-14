@@ -1,4 +1,4 @@
-package com.bolly.hashmap;
+package com.bolly.jdk.hashmap;
 
 import java.io.Serializable;
 import java.util.*;

@@ -1,4 +1,4 @@
-package com.bolly.examination;
+package com.bolly.jdk.examination;
 
 import java.util.Iterator;
 import java.util.Set;

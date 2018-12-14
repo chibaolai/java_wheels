@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false" scan="false" scanPeriod="30 seconds">
+
+  <contextName>bolly-springboot</contextName>
+
+  <jmxConfigurator />
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        <![CDATA[
+        [%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %level %logger[%mdc{TRACE_ID},%mdc{REMOTE_ADDR},%mdc{REQUEST_URI},%mdc{USER_ID}]-
+        %message%n
+        ]]>
+      </pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_PATH:-.}/${CONTEXT_NAME}.log</file>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>
+        <![CDATA[
+        [%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %level %logger [%mdc{TRACE_ID},%mdc{REMOTE_ADDR},%mdc{REQUEST_URI},%mdc{USER_ID}] - %message%n
+        ]]>
+      </pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_PATH:-.}/%d{yyyy,aux}/%d{MM,aux}/${CONTEXT_NAME}.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+      <maxHistory>730</maxHistory>
+    </rollingPolicy>
+  </appender>
+  
+  <logger name="com.bolly.springboot" additivity="false" level="INFO">
+  	<appender-ref ref="FILE" />
+  </logger>
+
+  <root level="info">
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>

@@ -1,0 +1,12 @@
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+
+
+    //util
+    compile "com.google.guava:guava:$guavaVersion"
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+}
+
+springBoot {
+    mainClassName = "com.bolly.springboot.Application"
+}

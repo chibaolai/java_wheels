@@ -1,0 +1,11 @@
+dependencies {
+    //spring
+    compile "org.springframework:spring-context-support:$springVersion"
+    compile "org.springframework:spring-jdbc:$springVersion"
+    compile "org.springframework:spring-tx:$springVersion"
+    //datasource
+    compile "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
+    runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+    //test
+    testCompile "junit:junit:$junitVersion"
+}
