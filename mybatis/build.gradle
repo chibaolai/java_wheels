@@ -1,0 +1,5 @@
+dependencies {
+    //mybatis
+    compile "org.mybatis:mybatis:$mybatisVersion"
+    runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+}
