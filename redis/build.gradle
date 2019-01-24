@@ -1,0 +1,10 @@
+dependencies {
+    compile "redis.clients:jedis:$jedisVersion"
+    compile "org.redisson:redisson:$redissonVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-data-redis:${springBootVersion}"
+}
+
+springBoot {
+    mainClassName = "com.bolly.redis.Application"
+}

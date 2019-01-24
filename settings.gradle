@@ -5,4 +5,7 @@ include 'spring'
 include 'tomcat'
 include 'mybatis'
 include 'springboot'
+include 'redis'
+include 'rabbitMQ'
+include 'mongo'
 

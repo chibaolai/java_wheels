@@ -38,6 +38,10 @@ allprojects {
         mysqlConnectorJavaVersion='5.1.39'
         springVersion = '5.0.4.RELEASE'
         springBootVersion = '2.0.0.RELEASE'
+        jedisVersion = '3.0.1'
+        redissonVersion = '3.10.1'
+        rabbitmqClientVersion = '5.5.3'
+        mongodbDriverVersion = '3.9.1'
     }
 }
 
