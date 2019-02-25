@@ -8,4 +8,5 @@ include 'springboot'
 include 'redis'
 include 'rabbitMQ'
 include 'mongo'
+include 'service'
 

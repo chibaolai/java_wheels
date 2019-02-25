@@ -1,13 +1,13 @@
-package com.bolly.app.service.imp;
+package com.bolly.sservice.service.imp;
 
-import com.bolly.app.entity.User;
-import com.bolly.app.service.UserService;
+import com.bolly.sservice.entity.User;
+import com.bolly.sservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
@@ -37,8 +36,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User get(long id) {
-        StringBuilder querySql = new StringBuilder("SELECT * FROM USER where id="+id);
-        return jdbcTemplate.queryForObject(querySql.toString(),User.class);
+        String querySql = "SELECT * FROM USER where id=?";
+        return jdbcTemplate.queryForObject(querySql, new BeanPropertyRowMapper<>(User.class),id);
     }
 
     @Override

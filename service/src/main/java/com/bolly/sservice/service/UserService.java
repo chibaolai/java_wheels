@@ -1,6 +1,7 @@
-package com.bolly.app.service;
+package com.bolly.sservice.service;
 
-import com.bolly.app.entity.User;
+
+import com.bolly.sservice.entity.User;
 
 import java.util.List;
 

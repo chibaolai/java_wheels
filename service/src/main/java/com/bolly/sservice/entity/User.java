@@ -1,6 +1,4 @@
-package com.bolly.app.entity;
-
-import java.io.Serializable;
+package com.bolly.sservice.entity;
 
 public class User {
     private long id;
