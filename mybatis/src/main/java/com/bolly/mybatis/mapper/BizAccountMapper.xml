@@ -19,7 +19,26 @@
 		<result property="updateBy" column="UPDATE_BY" />
 		<result property="updateDate" column="UPDATE_DATE" />
 	</resultMap>
-
+	<sql id="cols-BizAccount">
+        <![CDATA[
+        ID id,
+        NAME name,
+        NICK_NAME nickName,
+        ACCOUNT_NAME accountName,
+        PASSWORD	password,
+        PHONE_NO phoneNo,
+        APP_TYPE appType,
+        APP_KIND appKind,
+        ALI_OPEN_ID aliOpenId,
+        WX_OPEN_ID wxOpenId,
+        HEAD_IMG headImg,
+        ENABLE enable,
+        CREATE_BY createBy,
+        CREATE_DATE createDate,
+        UPDATE_BY updateBy,
+        UPDATE_DATE updateDate
+        ]]>
+	</sql>
 	<select id="getByPhone" resultType="com.bolly.mybatis.entity.BizAccount">
 		SELECT
 		<include refid="cols-BizAccount" />
