@@ -2,6 +2,15 @@ dependencies {
     compile project(":service")
     //spring
     compile "org.springframework:spring-tx:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+
+    //tomcat
+    compile "org.apache.tomcat:tomcat-servlet-api:$tomcatVersion"
+    //embed tomcat
+    compile "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion"
+    compile "org.apache.tomcat.embed:tomcat-embed-jasper:$tomcatVersion"
+    compile "org.apache.tomcat.embed:tomcat-embed-logging-juli:$tomcatLoggingVersion"
+
     //test
     testCompile "junit:junit:$junitVersion"
 }

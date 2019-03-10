@@ -132,6 +132,7 @@ public class MyHashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Clonea
 
 
     public static void main(String[] args) {
+
 //        MyHashMap<String,String> hashMap = new MyHashMap<>();
         String key = "1";
         int h;

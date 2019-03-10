@@ -33,6 +33,7 @@ allprojects {
         commonsLangVersion = '3.4'
         guavaVersion='19.0'
         tomcatVersion = '8.5.14'
+        tomcatLoggingVersion = '8.5.2'
         junitVersion='4.12'
         mybatisVersion = '3.4.1'
         mysqlConnectorJavaVersion='5.1.39'

@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 
-@ComponentScan(basePackages = "com.bolly.app")
-@Import({DataSourceConfig.class})
 @Configuration
 public class TxConfig {
 //    @Bean

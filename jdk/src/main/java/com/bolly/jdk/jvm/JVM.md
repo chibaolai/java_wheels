@@ -28,8 +28,8 @@
 * full GC
 
 ## 配置参数
-* -Xmx：JVM最大可用内存
-* -Xms：JVM初始内存，设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存
+* -Xmx：JVM最大可用内存，maximum memory size for pile and heap
+* -Xms：JVM初始内存，设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存，minimum memory size for pile and heap
 * -Xmn：年轻代内存
-* -Xss：
+* -Xss：栈内存
 
