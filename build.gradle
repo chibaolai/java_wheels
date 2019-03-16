@@ -11,6 +11,8 @@ buildscript {
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE'
         classpath 'se.transmode.gradle:gradle-docker:1.2'
+        classpath 'org.jruyi.gradle:thrift-gradle-plugin:0.2.0'
+        classpath 'no.nils:wsdl2java:0.10'
     }
 }
 

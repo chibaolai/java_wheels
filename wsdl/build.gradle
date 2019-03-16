@@ -1,0 +1,12 @@
+apply plugin: 'no.nils.wsdl2java'
+
+dependencies {
+}
+
+wsdl2java {
+    generatedWsdlDir = file("build/generated-sources/wsdl/")
+    wsdlDir = file("src/main/rpcwsdl")
+    wsdlsToGenerate = [
+            ['-exceptionSuper','java.lang.RuntimeException','-faultSerialVersionUID', 'wsdl', 'wsdl/src/main/rpcwsdl/WSserver.wsdl'],
+    ]
+}

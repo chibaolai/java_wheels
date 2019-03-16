@@ -9,4 +9,7 @@ include 'redis'
 include 'rabbitMQ'
 include 'mongo'
 include 'service'
+include 'thrift'
+include 'wsdl'
+include 'wsdlServer'
 
