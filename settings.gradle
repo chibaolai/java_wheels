@@ -12,4 +12,7 @@ include 'service'
 include 'thrift'
 include 'wsdl'
 include 'wsdlServer'
-
+include 'tool'
+include 'javassist'
+include 'stubmock'
+include 'support'

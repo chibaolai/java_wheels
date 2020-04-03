@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':support')
+    implementation "org.javassist:javassist:3.27.0-GA"
+    runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+    implementation "c3p0:c3p0:0.9.1.2"
+}

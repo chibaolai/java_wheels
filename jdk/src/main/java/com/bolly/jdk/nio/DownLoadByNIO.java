@@ -19,7 +19,7 @@ public class DownLoadByNIO {
      * @param FILE_URL
      * @param FILE_NAME
      */
-    private void getFileByJavaIOJDK6(String FILE_URL, String FILE_NAME) {
+    public void getFileByJavaIOJDK6(String FILE_URL, String FILE_NAME) {
         try (BufferedInputStream in = new BufferedInputStream(new URL(FILE_URL).openStream());
              FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME)) {
             byte dataBuffer[] = new byte[1024];
@@ -38,7 +38,7 @@ public class DownLoadByNIO {
      * @param FILE_URL
      * @param FILE_NAME
      */
-    private void getFileByJavaIOJDK7(String FILE_URL, String FILE_NAME) {
+    public void getFileByJavaIOJDK7(String FILE_URL, String FILE_NAME) {
         try {
             InputStream in = new URL(FILE_URL).openStream();
             Files.copy(in, Paths.get(FILE_NAME), StandardCopyOption.REPLACE_EXISTING);
@@ -55,7 +55,7 @@ public class DownLoadByNIO {
      * @param FILE_URL
      * @param FILE_NAME
      */
-    private void getFileByNIO(String FILE_URL, String FILE_NAME) {
+    public void getFileByNIO(String FILE_URL, String FILE_NAME) {
         try {
             ReadableByteChannel readableByteChannel = Channels.newChannel(new URL(FILE_URL).openStream());
             FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME);
@@ -71,7 +71,7 @@ public class DownLoadByNIO {
      * @param FILE_URL
      * @param FILE_NAME
      */
-    private void getFileContinue(String FILE_URL, String FILE_NAME) {
+    public void getFileContinue(String FILE_URL, String FILE_NAME) {
         try {
             File outputFile = new File(FILE_NAME);
             URL url = new URL(FILE_URL);
@@ -90,17 +90,6 @@ public class DownLoadByNIO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-    }
-
-    public static void main(String[] args) {
-
-        String FILE_URL = "";
-        String FILE_NAME = "/Users/bolly/Downloads/";
-        new DownLoadByNIO().getFileByJavaIOJDK6(FILE_URL,FILE_NAME.concat("1.png"));
-        new DownLoadByNIO().getFileByJavaIOJDK7(FILE_URL,FILE_NAME.concat("2.png"));
-        new DownLoadByNIO().getFileByNIO(FILE_URL,FILE_NAME.concat("3.png"));
-        new DownLoadByNIO().getFileContinue(FILE_URL,FILE_NAME.concat("100.png"));
 
     }
 }
