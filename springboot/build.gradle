@@ -1,13 +1,48 @@
+apply plugin: 'org.springframework.boot'
+
 dependencies {
     compile project(':service')
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
     compile("org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}")
+    compile "de.codecentric:spring-boot-admin-starter-server:2.2.2"
+    compile "de.codecentric:spring-boot-admin-server-ui:2.2.2"
 
     //util
     compile "com.google.guava:guava:$guavaVersion"
     compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }
 
 springBoot {
     mainClassName = "com.bolly.springboot.Application"
+}
+
+
+// 清除lib
+task myClearLib(type: Delete) {
+    delete "$buildDir/libs/lib"
+}
+
+// 拷贝lib
+task myCopyLib(type: Copy) {
+    into "$buildDir/libs/lib"
+    from configurations.runtime
+}
+
+bootJar {
+    baseName = 'springboot'
+    version = '1.0.0'
+
+    excludes = ["*.jar"]
+
+    // lib目录的清除和复制任务
+    dependsOn myClearLib
+    dependsOn myCopyLib
+
+    // 指定依赖包的路径，运行时不再需要指定 java.ext.dir 或 loader.path 参数。
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' ')
+    }
 }

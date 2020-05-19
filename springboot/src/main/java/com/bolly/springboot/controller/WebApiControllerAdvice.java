@@ -1,9 +1,9 @@
 package com.bolly.springboot.controller;
 
-import com.bolly.springboot.dto.Result;
-import com.bolly.springboot.dto.Status;
 import com.bolly.springboot.exception.InValidTimeWindowException;
 import com.bolly.springboot.exception.InValidTokenException;
+import com.bolly.support.dto.Result;
+import com.bolly.support.dto.Status;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

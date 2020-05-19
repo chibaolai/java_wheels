@@ -1,6 +1,6 @@
 package com.bolly.stub.aspect;
 
-import com.alibaba.fastjson.JSON;
+import com.bolly.support.utils.JacksonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -27,10 +27,10 @@ public class FeignStubAspect {
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint pjp){
         String name = StringUtils.join(pjp.getTarget().getClass().getName(), ".", pjp.getSignature().getName());
-        LOG.info("-----【{}】---- 进入挡板模式... request: 【{}】", name, JSON.toJSON(pjp.getArgs()));
+        LOG.info("-----【{}】---- 进入挡板模式... request: 【{}】", name, JacksonUtils.marshal(pjp.getArgs()));
         try {
             Object proceed = pjp.proceed();
-            LOG.info("-----【{}】---- 退出挡板模式... request: 【{}】, response: 【{}】", name, JSON.toJSON(pjp.getArgs()), JSON.toJSON(proceed));
+            LOG.info("-----【{}】---- 退出挡板模式... request: 【{}】, response: 【{}】", name, JacksonUtils.marshal(pjp.getArgs()), JacksonUtils.marshal(proceed));
             return proceed;
         } catch (Throwable e) {
             e.printStackTrace();

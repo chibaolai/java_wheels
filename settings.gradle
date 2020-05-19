@@ -16,3 +16,5 @@ include 'tool'
 include 'javassist'
 include 'stubmock'
 include 'support'
+include 'mybatisplus'
+

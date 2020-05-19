@@ -1,9 +1,9 @@
 package com.bolly.stub;
 
-import com.alibaba.fastjson.JSON;
 import com.bolly.stub.client.SmsFeignClient;
 import com.bolly.stub.req.SmsReq;
 import com.bolly.stub.res.SmsRes;
+import com.bolly.support.utils.JacksonUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class ApplicationTests {
         SmsRes send = smsFeignClient.send(smsReq);
 
         //打印结果
-        System.out.println(JSON.toJSON(send));
+        System.out.println(JacksonUtils.marshal(send));
     }
 
 }

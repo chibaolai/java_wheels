@@ -3,7 +3,7 @@ package com.bolly.stub.client.stub;
 import com.bolly.stub.client.SmsFeignClient;
 import com.bolly.stub.req.SmsReq;
 import com.bolly.stub.res.SmsRes;
-import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang.math.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.slf4j.Logger;
@@ -31,7 +31,7 @@ public class StubClient implements SmsFeignClient {
         yunxunSmsRespDto.setCode("0");
         yunxunSmsRespDto.setFailNum("0");
         yunxunSmsRespDto.setSuccessNum("1");
-        yunxunSmsRespDto.setMsgId(String.valueOf(RandomUtils.nextLong(19000000000000000L, 19999999999999999L)));
+        yunxunSmsRespDto.setMsgId(String.valueOf(RandomUtils.nextLong()));
         yunxunSmsRespDto.setTime(DateFormatUtils.format(new Date(), "yyyyMMddHHmmss"));
         yunxunSmsRespDto.setErrorMsg("");
 

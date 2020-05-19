@@ -28,9 +28,13 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(transactionManager = "transactionManager",rollbackFor = Exception.class)
     public void insert(User user) {
-        String insertSql = "insert into user (name, age) value (:name,:age)";
-        SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(user);
-        int ret = jdbcTemplate.update(insertSql, sqlParameterSource);
+//        String insertSql = "insert into user (name, age) value (:name,:age)";
+//        SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(user);
+//        int ret = jdbcTemplate.update(insertSql, sqlParameterSource);
+
+        int ret = jdbcTemplate.update("INSERT INTO user (name, age) VALUES('"
+                + user.getName() + "', '"
+                + user.getAge() + "')");
         System.out.println(ret);
     }
 

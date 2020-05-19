@@ -9,7 +9,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.2.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.2.1.RELEASE'
         classpath 'se.transmode.gradle:gradle-docker:1.2'
         classpath 'org.jruyi.gradle:thrift-gradle-plugin:0.2.0'
         classpath 'no.nils:wsdl2java:0.10'
@@ -34,23 +34,33 @@ allprojects {
     ext {
         commonsLangVersion = '3.4'
         guavaVersion='19.0'
-        tomcatVersion = '8.5.14'
+        tomcatVersion = '9.0.27'
         tomcatLoggingVersion = '8.5.2'
         junitVersion='4.12'
         mybatisVersion = '3.4.1'
+        mybatisPlusVersion = '3.3.1'
         mysqlConnectorJavaVersion='5.1.39'
         springVersion = '5.0.4.RELEASE'
-        springBootVersion = '2.1.2.RELEASE'
+        springBootVersion = '2.2.1.RELEASE'
         jedisVersion = '3.0.1'
         redissonVersion = '3.10.1'
         rabbitmqClientVersion = '5.5.3'
         mongodbDriverVersion = '3.9.1'
+        slf4jVersion = '1.7.21'
+        log4jdbcVersion = '1.16'
+        logbackVersion = '1.1.7'
+        logstashLogbackEncoderVersion = '4.7'
+        jodaTimeVersion = '2.9.4'
+        springDataRedisVersion = '1.7.2.RELEASE'
+        jedisVersion = '2.9.0'
+        jasyptVersion = '1.9.2'
+        lombokVersion = '1.18.12'
+        h2Version = '1.4.200'
     }
 }
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'org.springframework.boot'
 
     sourceSets.main.resources.srcDirs += "src/main/java"
     sourceSets.test.resources.srcDirs += "src/test/java"
@@ -64,8 +74,4 @@ subprojects {
         targetCompatibility = 1.8
         options.encoding = 'UTF-8'
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.5.1'
 }

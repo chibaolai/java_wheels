@@ -1,14 +1,13 @@
 package com.bolly.springboot.controller;
 
-import com.bolly.springboot.dto.Result;
-import com.bolly.springboot.req.PingReq;
-import com.bolly.springboot.res.PingResp;
+import com.bolly.springboot.req.UserAddReq;
+import com.bolly.springboot.res.UserAddResp;
 import com.bolly.sservice.entity.User;
 import com.bolly.sservice.service.UserService;
+import com.bolly.support.dto.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,21 +26,18 @@ public class WebApiController {
     private UserService userService;
 
     /**
-     * 心跳
+     * 新增用户
      *
      * @return
      */
-    @RequestMapping(value = "/ping")
-    public Result<PingResp> ping(@RequestBody PingReq req) {
-        PingResp ret = new PingResp();
-        LOGGER.info("");
-        try {
-            User user = userService.get(4);
-            Thread.sleep(4000);
-            ret.setName(user.getName()+":"+Thread.currentThread().getName());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    @RequestMapping(value = "/userAdd")
+    public Result<UserAddResp> userAdd(@RequestBody UserAddReq req) {
+        UserAddResp ret = new UserAddResp();
+        User arg = new User();
+        arg.setName(req.getName());
+        arg.setAge(req.getAge());
+        userService.insert(arg);
+        ret.setName(req.getName()+":"+Thread.currentThread().getName());
         return Result.data(ret);
     }
 }

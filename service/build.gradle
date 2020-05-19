@@ -1,4 +1,5 @@
 dependencies {
+    compile project(':support')
     //datasource
     compile "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
     compile "org.springframework:spring-jdbc:$springVersion"

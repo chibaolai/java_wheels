@@ -2,7 +2,7 @@
 
 <configuration debug="false" scan="false" scanPeriod="30 seconds">
 
-  <contextName>bolly-springboot</contextName>
+  <contextName>springboot</contextName>
 
   <jmxConfigurator />
 
