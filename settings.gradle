@@ -17,4 +17,7 @@ include 'javassist'
 include 'stubmock'
 include 'support'
 include 'mybatisplus'
+include 'batch'
+include 'leetcode'
+include 'bootthrift'
 

@@ -1,0 +1,29 @@
+dependencies {
+    compile project(':support')
+    // spring
+    implementation "org.springframework:spring-context-support:$springVersion"
+    implementation "org.springframework:spring-webmvc:$springVersion"
+    
+    //tomcat
+    implementation "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion"
+    implementation "org.apache.tomcat.embed:tomcat-embed-jasper:$tomcatVersion"
+    implementation "org.apache.tomcat.embed:tomcat-embed-logging-juli:$tomcatLoggingVersion"
+    implementation "org.apache.tomcat:tomcat-servlet-api:$tomcatVersion"
+    implementation "org.apache.tomcat:tomcat-jsp-api:$tomcatVersion"
+    implementation "org.apache.tomcat:tomcat-el-api:$tomcatVersion"
+
+    //log
+    implementation "org.slf4j:slf4j-api:$slf4jVersion"
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
+    compileOnly "ch.qos.logback:logback-classic:$logbackVersion"
+
+    implementation "org.apache.commons:commons-lang3:$commonsLangVersion"
+    //redis
+    implementation "org.springframework.data:spring-data-redis:$springDataRedisVersion"
+    implementation "redis.clients:jedis:$jedisVersion"
+
+    implementation "org.jasypt:jasypt:$jasyptVersion"
+    implementation "org.jasypt:jasypt-spring31:$jasyptVersion"
+
+    implementation "jakarta.validation:jakarta.validation-api:2.0.1"
+}

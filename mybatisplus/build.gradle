@@ -1,0 +1,8 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
+    compile "com.baomidou:mybatis-plus-boot-starter:$mybatisPlusVersion"
+    implementation "org.projectlombok:lombok:$lombokVersion"
+    implementation "com.h2database:h2:$h2Version"
+    runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}

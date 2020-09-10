@@ -1,0 +1,7 @@
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-batch:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile "org.projectlombok:lombok:1.18.2"
+    runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") 
+}

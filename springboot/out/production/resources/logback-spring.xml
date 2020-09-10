@@ -10,8 +10,7 @@
     <encoder>
       <pattern>
         <![CDATA[
-        [%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %level %logger[%mdc{TRACE_ID},%mdc{REMOTE_ADDR},%mdc{REQUEST_URI},%mdc{USER_ID}]-
-        %message%n
+        [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %le [%mdc{TRACE_ID},%mdc{REMOTE_ADDR},%mdc{REQUEST_URI},%mdc{USER_ID}]- [%F:%M:%L]- %message%n
         ]]>
       </pattern>
     </encoder>
@@ -57,8 +56,8 @@
   	<appender-ref ref="FILE" />
   </logger>
 
-  <root level="info">
-    <appender-ref ref="FILE" />
+  <root level="debug">
+    <!--<appender-ref ref="FILE" />-->
     <appender-ref ref="STDOUT" />
   </root>
 

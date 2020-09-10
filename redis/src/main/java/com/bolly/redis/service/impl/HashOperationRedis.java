@@ -24,7 +24,10 @@ public class HashOperationRedis implements OperationRedis {
      */
     @Override
     public void doOperation(Jedis jedis) {
-        jedis.hset("zoo","tiger","10");
+        jedis.hset("zoo","tiger","1");
+        jedis.hset("zoo","cat","1");
+        jedis.hset("zoo","dog","1");
         System.out.println("redis HashMap key=zoo,value="+jedis.hget("zoo","tiger"));
+        System.out.println("redis HashMap key=zoo,value="+jedis.hlen("zoo"));
     }
 }

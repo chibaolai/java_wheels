@@ -23,7 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class OptLockerTest {
 
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
     @Test
     public void testUpdateByIdSucc() {
