@@ -45,7 +45,7 @@ allprojects {
         jedisVersion = '3.0.1'
         redissonVersion = '3.10.1'
         rabbitmqClientVersion = '5.5.3'
-        mongodbDriverVersion = '3.9.1'
+        mongodbDriverVersion = '3.12.7'
         slf4jVersion = '1.7.21'
         log4jdbcVersion = '1.16'
         logbackVersion = '1.1.7'
@@ -56,6 +56,8 @@ allprojects {
         jasyptVersion = '1.9.2'
         lombokVersion = '1.18.12'
         h2Version = '1.4.200'
+        mongojackVersion = '2.6.1'
+        commonsCollectionsVersion = '3.2.2'
     }
 }
 

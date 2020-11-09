@@ -2,4 +2,5 @@ dependencies {
     implementation "com.fasterxml.jackson.core:jackson-databind:2.11.0.rc1"
     implementation "org.apache.commons:commons-lang3:$commonsLangVersion"
     implementation "joda-time:joda-time:$jodaTimeVersion"
+    compile "commons-collections:commons-collections:$commonsCollectionsVersion"
 }

@@ -6,6 +6,7 @@ import info.developerblog.spring.thrift.annotation.ThriftClient;
 import info.developerblog.spring.thrift.annotation.ThriftClientsMap;
 import org.apache.thrift.TException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  * Created by aleksandr on 08.09.15.
  */
 @Service
+@Qualifier
 public class GreetingService {
 
     @ThriftClient(serviceId = "greeting-service", path = "/api")

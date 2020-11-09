@@ -1,3 +1,7 @@
 dependencies {
+    compile project(':support')
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     compile "org.mongodb:mongodb-driver:$mongodbDriverVersion"
+    compile ("org.mongojack:mongojack:$mongojackVersion")
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
 }
