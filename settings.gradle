@@ -20,4 +20,7 @@ include 'mybatisplus'
 include 'batch'
 include 'leetcode'
 include 'bootthrift'
+include 'dbdoc'
+include 'cloudthrift'
+include 'nacos'
 
