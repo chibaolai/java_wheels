@@ -1,16 +1,19 @@
 buildscript {
     repositories {
         maven {
-            url "http://maven.aliyun.com/nexus/content/groups/public/"
+            url "http://101.37.68.202:8081/repository/maven-public/"
         }
         maven {
-            url "https://repo.spring.io/libs-milestone"
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
         }
+//        maven {
+//            url "https://repo.spring.io/libs-milestone"
+//        }
         jcenter()
     }
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE'
-        classpath 'se.transmode.gradle:gradle-docker:1.2'
+//        classpath 'se.transmode.gradle:gradle-docker:1.2'
         classpath 'org.jruyi.gradle:thrift-gradle-plugin:0.2.0'
         classpath 'no.nils:wsdl2java:0.10'
     }
@@ -24,11 +27,14 @@ allprojects {
     version = version
     repositories {
         maven {
-            url "http://maven.aliyun.com/nexus/content/groups/public/"
+            url "http://101.37.68.202:8081/repository/maven-public/"
         }
         maven {
-            url "https://repo.spring.io/libs-milestone"
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
         }
+//        maven {
+//            url "https://repo.spring.io/libs-milestone"
+//        }
         jcenter()
     }
     ext {
@@ -39,7 +45,7 @@ allprojects {
         junitVersion='4.12'
         mybatisVersion = '3.4.1'
         mybatisPlusVersion = '3.3.1'
-        mysqlConnectorJavaVersion='5.1.39'
+        mysqlConnectorJavaVersion='8.0.11'
         springVersion = '5.0.4.RELEASE'
         springBootVersion = '2.2.1.RELEASE'
         jedisVersion = '3.0.1'

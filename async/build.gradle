@@ -1,0 +1,10 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '6.5'
+}

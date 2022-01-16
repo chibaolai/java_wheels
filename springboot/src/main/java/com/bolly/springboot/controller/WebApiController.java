@@ -40,4 +40,13 @@ public class WebApiController {
         ret.setName(req.getName()+":"+Thread.currentThread().getName());
         return Result.data(ret);
     }
+    @RequestMapping(value = "/log")
+    public void log() {
+        LOGGER.debug("debug");
+        LOGGER.info("info");
+        LOGGER.warn("warn");
+        LOGGER.error("error");
+        LOGGER.trace("trace");
+    }
+
 }

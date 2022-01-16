@@ -1,0 +1,7 @@
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("commons-codec:commons-codec:1.11")
+    compile("org.apache.commons:commons-lang3:3.8.1")
+    compile("org.bouncycastle:bcprov-jdk15on:1.47")
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}
