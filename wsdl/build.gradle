@@ -1,12 +1,20 @@
 apply plugin: 'no.nils.wsdl2java'
 
+repositories {
+    flatDir {
+        dirs {
+            "${System.env.JAVA_HOME}/jre/lib"
+        }
+    }
+}
 dependencies {
 }
 
 wsdl2java {
-    generatedWsdlDir = file("build/generated-sources/wsdl/")
-    wsdlDir = file("src/main/rpcwsdl")
+    encoding = 'utf-8'
+    wsdlDir = file("$projectDir/src/main/resources/wsdl")
     wsdlsToGenerate = [
-            ['-exceptionSuper','java.lang.RuntimeException','-faultSerialVersionUID', 'wsdl', 'wsdl/src/main/rpcwsdl/WSserver.wsdl'],
+            ["$wsdlDir/WSserver.wsdl"]
     ]
+    locale = Locale.SIMPLIFIED_CHINESE
 }

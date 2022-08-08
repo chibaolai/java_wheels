@@ -18,9 +18,9 @@ public class Application {
         // 数据源
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
-        hikariConfig.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/elhodb");
-        hikariConfig.setUsername("root");
-        hikariConfig.setPassword("123456");
+        hikariConfig.setJdbcUrl("jdbc:mysql://121.196.181.134:33065/sjyydb");
+        hikariConfig.setUsername("elho");
+        hikariConfig.setPassword("5N2OV6nX");
         // 设置可以获取tables remarks信息
         hikariConfig.addDataSourceProperty("useInformationSchema", "true");
         hikariConfig.setMinimumIdle(2);
@@ -30,7 +30,7 @@ public class Application {
         // 1、生成文件配置
         EngineConfig engineConfig = EngineConfig.builder()
                 // 生成文件路径
-                .fileOutputDir("/Users/bolly/Downloads/icbc")
+                .fileOutputDir("/Users/chibaolai/Downloads/db")
                 // 打开目录
                 .openOutputDir(false)
                 // 文件类型

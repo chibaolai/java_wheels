@@ -1,0 +1,10 @@
+apply plugin: 'org.springframework.boot'
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.kafka:spring-kafka:${springBootVersion}")
+}
+
+
+springBoot {
+    mainClassName = "com.bolly.kafka.Application"
+}

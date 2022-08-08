@@ -6,7 +6,8 @@ import javax.xml.ws.Endpoint;
 @WebService
 public class WSserver {
 
-    public String ping(String word) {
+    public String ping(String word) throws InterruptedException {
+        Thread.sleep(2000);
         return "hello "+ word;
     }
 
